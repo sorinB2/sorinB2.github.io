@@ -1208,8 +1208,8 @@ div#product__section {
         margin-left: 0;
     }
     .tabheader__item {
-        background-color: #3CEDB7;
-        border: none;
+        background-color: #3cedb800;
+        border: 0.5px solid #221E1E;
         margin: 0 0.5rem;
         border-radius: 1rem;
         white-space: nowrap;
