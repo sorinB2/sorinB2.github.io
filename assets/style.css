@@ -1209,7 +1209,7 @@ div#product__section {
     }
     .tabheader__item {
         background-color: #3cedb800;
-        border: 0.5px solid #221E1E;
+        border: 1px solid #221E1E;
         margin: 0 0.5rem;
         border-radius: 1rem;
         white-space: nowrap;
