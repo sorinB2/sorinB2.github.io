@@ -25,3 +25,21 @@ export const StyledCharacterDetails = styled.div`
 export const DetailsWrapper = styled.div`
 	margin: 0 16px;
 `;
+
+export const BackButton = styled.div`
+	margin: 16px 0;
+	height: 33px;
+	font-size: 16px;
+	font-weight: 600;
+	box-sizing: border-box;
+	border-radius: 5px;
+	color: ${COLORS.WHITE};
+	background-color: ${COLORS.DARK_BLUE};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.01);
+	}
+`;

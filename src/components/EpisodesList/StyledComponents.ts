@@ -16,3 +16,13 @@ export const StyledListItem = styled.li`
 	font-weight: ${(props: StyledListItemProps) => props.fontWeight};
 	color: ${(props: StyledListItemProps) => props.textColor};
 `;
+
+export const StyledTitle = styled.p`
+	font-size: 28px;
+	font-weight: 600;
+	padding: 16px 0;
+	margin: 0;
+	text-align: center;
+	height: 65px;
+	box-sizing: border-box;
+`;

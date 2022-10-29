@@ -1,10 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 // Components
 import EpisodesList from '../components/EpisodesList/EpisodesList';
 import CharacterCard from '../components/CharacterDetails/CharacterCard';
-import { StyledCharacterDetails } from '../components/CharacterDetails/StyledComponents';
+import { BackButton, StyledCharacterDetails } from '../components/CharacterDetails/StyledComponents';
 
 // Actions
 import { useGQLQuery } from '../hooks/useGQLQuery';
@@ -12,9 +12,12 @@ import { useGQLQuery } from '../hooks/useGQLQuery';
 // Other resources
 import { api } from '../api/api';
 import { GET_CHARACTER_DETAILS } from '../query/query';
+import { STRINGS } from '../constants/strings';
+import { ROUTES } from '../constants/routes';
 
 const CharacterDetails = () => {
 	const params = useParams();
+	const navigate = useNavigate();
 	const { data, isLoading, error } = useGQLQuery({
 		api: api,
 		key: 'character',
@@ -26,10 +29,16 @@ const CharacterDetails = () => {
 
 	if (error) return <div>Something went wrong</div>;
 
-	console.log(data);
+	const goBackHandler = () => {
+		navigate(ROUTES.CHARACTERS);
+	};
+
 	return (
 		<StyledCharacterDetails>
-			<CharacterCard {...data.character} />
+			<div>
+				<BackButton onClick={goBackHandler}>{STRINGS.GO_BACK}</BackButton>
+				<CharacterCard {...data.character} />
+			</div>
 			<EpisodesList episodes={data.character.episode} />
 		</StyledCharacterDetails>
 	);
