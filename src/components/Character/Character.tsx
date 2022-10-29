@@ -1,3 +1,4 @@
+import { STRINGS } from '../../constants/strings';
 import {
 	CharacterCard,
 	CharacterDetails,
@@ -8,19 +9,20 @@ import {
 	CharacterText
 } from './CharacterStyledComponents';
 
-const Character = () => {
+const Character = (props: CharacterProps) => {
+	const { name, image, status, species, origin } = props;
 	return (
 		<CharacterCard>
-			<CharacterImage src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+			<CharacterImage src={image} />
 			<div>
-				<CharacterName>Shrek the musical fan</CharacterName>
+				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>
 					<CharacterStatus bg="red" />
-					<CharacterText>Dead - Human</CharacterText>
+					<CharacterText>{`${status} - ${species}`}</CharacterText>
 				</CharacterInformation>
 				<CharacterDetails>
-					<span>Origin</span>
-					<CharacterText>Earth (Replacement Dimension)</CharacterText>
+					<span>{STRINGS.ORIGIN}</span>
+					<CharacterText>{origin.name}</CharacterText>
 				</CharacterDetails>
 			</div>
 		</CharacterCard>
@@ -28,3 +30,13 @@ const Character = () => {
 };
 
 export default Character;
+
+interface CharacterProps {
+	name: string;
+	image: string;
+	status: string;
+	species: string;
+	origin: {
+		name: string;
+	};
+}
