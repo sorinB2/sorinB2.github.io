@@ -11,8 +11,11 @@ import { useGQLQuery } from '../hooks/useGQLQuery';
 import { api } from '../api/api';
 import { GET_CHARACTERS } from '../query/query';
 import { CharacterType } from '../types/types';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../constants/routes';
 
 const CharactersList = () => {
+	const navigate = useNavigate();
 	const { data, isLoading, error } = useGQLQuery({
 		api: api,
 		key: 'characters',
@@ -20,22 +23,17 @@ const CharactersList = () => {
 		variables: { page: 1 }
 	});
 
+	const characterClichHandler = (e: React.MouseEvent) => {
+		navigate(`${ROUTES.CHARACTERS}/${e.currentTarget.id}`);
+	};
+
 	if (isLoading) return <div>Loading...</div>;
 
 	if (error) return <div>Something went wrong</div>;
 	return (
 		<StyledList>
 			{data.characters.results.map((character: CharacterType) => {
-				return (
-					<Character
-						key={character.id}
-						name={character.name}
-						image={character.image}
-						status={character.status}
-						species={character.species}
-						origin={character.origin}
-					/>
-				);
+				return <Character key={character.id} {...character} onClick={characterClichHandler} />;
 			})}
 		</StyledList>
 	);

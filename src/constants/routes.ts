@@ -1,3 +1,5 @@
 export const ROUTES = {
-	HOME: '/'
+	HOME: '/',
+	CHARACTERS: '/characters',
+	CHARACTER_DETAILS: '/characters/:characterId'
 };

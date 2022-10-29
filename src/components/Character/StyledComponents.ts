@@ -15,6 +15,10 @@ export const CharacterCard = styled.div`
 	grid-gap: 15px;
 	overflow: hidden;
 	color: #212529;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.01);
+	}
 `;
 
 export const CharacterImage = styled.img`

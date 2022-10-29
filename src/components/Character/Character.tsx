@@ -11,11 +11,12 @@ import {
 
 // Other resources
 import { STRINGS } from '../../constants/strings';
+import React from 'react';
 
 const Character = (props: CharacterProps) => {
-	const { name, image, status, species, origin } = props;
+	const { name, image, status, species, origin, id, onClick } = props;
 	return (
-		<CharacterCard>
+		<CharacterCard id={id} onClick={onClick}>
 			<CharacterImage src={image} />
 			<div>
 				<CharacterName>{name}</CharacterName>
@@ -39,7 +40,9 @@ interface CharacterProps {
 	image: string;
 	status: string;
 	species: string;
+	id: string;
 	origin: {
 		name: string;
 	};
+	onClick: (e: React.MouseEvent) => void;
 }
