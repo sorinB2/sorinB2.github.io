@@ -9,6 +9,7 @@ export const CharacterCard = styled.div`
 	height: 200px;
 	border-radius: 5px;
 	box-shadow: 0.5px 3px 3px 3px rgba(0, 0, 0, 0.15);
+	background-color: white;
 	display: grid;
 	grid-template-columns: 200px auto;
 	grid-gap: 15px;
@@ -25,7 +26,7 @@ export const CharacterImage = styled.img`
 `;
 
 export const CharacterName = styled.div`
-	font-size: 28px;
+	font-size: 26px;
 	font-weight: 700;
 	margin-top: 16px;
 `;

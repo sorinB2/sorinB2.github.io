@@ -17,7 +17,7 @@ const Character = (props: CharacterProps) => {
 			<div>
 				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>
-					<CharacterStatus bg="red" />
+					<CharacterStatus bg={status === 'Alive' ? 'green' : status === 'Dead' ? 'red' : 'gray'} />
 					<CharacterText>{`${status} - ${species}`}</CharacterText>
 				</CharacterInformation>
 				<CharacterDetails>
