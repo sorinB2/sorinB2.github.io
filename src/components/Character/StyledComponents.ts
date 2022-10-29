@@ -4,6 +4,11 @@ interface CharacterStatusProps {
 	bg: string;
 }
 
+interface CharacterImageProps {
+	height: string;
+	width: string;
+}
+
 export const CharacterCard = styled.div`
 	width: 550px;
 	height: 200px;
@@ -22,8 +27,8 @@ export const CharacterCard = styled.div`
 `;
 
 export const CharacterImage = styled.img`
-	height: 200px;
-	width: 200px;
+	height: ${(props: CharacterImageProps) => props.height};
+	width: ${(props: CharacterImageProps) => props.width};
 	object-fit: cover;
 	overflow: hidden;
 `;

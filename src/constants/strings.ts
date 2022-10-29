@@ -1,3 +1,4 @@
 export const STRINGS = {
-	ORIGIN: 'Origin'
+	ORIGIN: 'Origin',
+	LOCATION: 'Location'
 };
