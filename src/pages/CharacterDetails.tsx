@@ -30,7 +30,7 @@ const CharacterDetails = () => {
 	return (
 		<StyledCharacterDetails>
 			<CharacterCard {...data.character} />
-			<EpisodesList />
+			<EpisodesList episodes={data.character.episode} />
 		</StyledCharacterDetails>
 	);
 };

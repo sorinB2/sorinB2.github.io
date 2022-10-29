@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { COLORS } from '../../constants/colors';
 
 export const StyledHeader = styled.header`
-	background-color: #2d3748;
+	background-color: ${COLORS.DARK_BLUE};
 	height: 55px;
 	display: flex;
 	align-items: center;
@@ -10,7 +11,7 @@ export const StyledHeader = styled.header`
 
 export const StyledHeaderTitle = styled.h1`
 	font-size: 28px;
-	color: white;
+	color: ${COLORS.WHITE};
 	font-weight: 900;
 	margin: 0 20px;
 `;
@@ -21,9 +22,9 @@ export const StyledMain = styled.main`
 `;
 
 export const StyledFooter = styled.footer`
-	background-color: #2d3748;
+	background-color: ${COLORS.DARK_BLUE};
 	height: 55px;
-	color: white;
+	color: ${COLORS.WHITE};
 	font-weight: 600;
 	display: flex;
 	justify-content: center;

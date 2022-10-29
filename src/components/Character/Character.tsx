@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Components
 import {
 	CharacterCard,
@@ -11,7 +13,7 @@ import {
 
 // Other resources
 import { STRINGS } from '../../constants/strings';
-import React from 'react';
+import { COLORS } from '../../constants/colors';
 
 const Character = (props: CharacterProps) => {
 	const { name, image, status, species, origin, id, onClick } = props;
@@ -21,7 +23,9 @@ const Character = (props: CharacterProps) => {
 			<div>
 				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>
-					<CharacterStatus bg={status === 'Alive' ? 'green' : status === 'Dead' ? 'red' : 'gray'} />
+					<CharacterStatus
+						bg={status === 'Alive' ? COLORS.GREEN : status === 'Dead' ? COLORS.RED : COLORS.GRAY}
+					/>
 					<CharacterText>{`${status} - ${species}`}</CharacterText>
 				</CharacterInformation>
 				<CharacterDetails>

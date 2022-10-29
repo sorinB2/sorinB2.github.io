@@ -11,6 +11,7 @@ import { DetailsWrapper, StyledCard } from './StyledComponents';
 
 // Other resources
 import { STRINGS } from '../../constants/strings';
+import { COLORS } from '../../constants/colors';
 
 const CharacterCard = (props: CharacterCardProps) => {
 	const { name, image, status, species, gender, origin, location } = props;
@@ -20,7 +21,9 @@ const CharacterCard = (props: CharacterCardProps) => {
 			<DetailsWrapper>
 				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>
-					<CharacterStatus bg={status === 'Alive' ? 'green' : status === 'Dead' ? 'red' : 'gray'} />
+					<CharacterStatus
+						bg={status === 'Alive' ? COLORS.GREEN : status === 'Dead' ? COLORS.RED : COLORS.GRAY}
+					/>
 					<CharacterText>{`${status} - ${species} - ${gender}`}</CharacterText>
 				</CharacterInformation>
 				<CharacterDetails>

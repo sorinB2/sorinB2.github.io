@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../constants/colors';
 
 interface CharacterStatusProps {
 	bg: string;
@@ -14,12 +15,12 @@ export const CharacterCard = styled.div`
 	height: 200px;
 	border-radius: 5px;
 	box-shadow: 0.5px 3px 3px 3px rgba(0, 0, 0, 0.15);
-	background-color: white;
+	background-color: ${COLORS.WHITE};
 	display: grid;
 	grid-template-columns: 200px auto;
 	grid-gap: 15px;
 	overflow: hidden;
-	color: #212529;
+	color: ${COLORS.DARG_GRAY};
 	cursor: pointer;
 	&:hover {
 		transform: scale(1.01);

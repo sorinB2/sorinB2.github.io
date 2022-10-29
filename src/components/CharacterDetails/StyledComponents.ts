@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import { COLORS } from '../../constants/colors';
 
 export const StyledCard = styled.div`
 	width: 250px;
 	height: auto;
+	max-height: 525px;
 	padding-bottom: 20px;
 	box-shadow: 0.5px 3px 3px 3px rgba(0, 0, 0, 0.15);
-	background-color: white;
+	background-color: ${COLORS.WHITE};
 	border-radius: 10px;
 	overflow: hidden;
 	position: sticky;
 	top: 20px;
+	color: ${COLORS.DARG_GRAY};
 `;
 
 export const StyledCharacterDetails = styled.div`

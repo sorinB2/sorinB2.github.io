@@ -36,6 +36,7 @@ export const GET_CHARACTER_DETAILS = gql`
 				name
 				air_date
 				episode
+				id
 			}
 		}
 	}
