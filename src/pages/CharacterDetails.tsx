@@ -14,18 +14,19 @@ import { api } from '../api/api';
 import { GET_CHARACTER_DETAILS } from '../query/query';
 import { STRINGS } from '../constants/strings';
 import { ROUTES } from '../constants/routes';
+import LoadingSpinner from '../components/Loader/LoadingSpinner';
 
 const CharacterDetails = () => {
 	const params = useParams();
 	const navigate = useNavigate();
-	const { data, isLoading, error } = useGQLQuery({
+	const { data, isLoading, isFetching, error } = useGQLQuery({
 		api: api,
 		key: 'character',
 		query: GET_CHARACTER_DETAILS,
 		variables: { id: params.characterId }
 	});
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading || isFetching) return <LoadingSpinner />;
 
 	if (error) return <div>Something went wrong</div>;
 

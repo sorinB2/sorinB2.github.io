@@ -13,10 +13,11 @@ import { GET_CHARACTERS } from '../query/query';
 import { CharacterType } from '../types/types';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import LoadingSpinner from '../components/Loader/LoadingSpinner';
 
 const CharactersList = () => {
 	const navigate = useNavigate();
-	const { data, isLoading, error } = useGQLQuery({
+	const { data, isLoading, isFetching, error } = useGQLQuery({
 		api: api,
 		key: 'characters',
 		query: GET_CHARACTERS,
@@ -27,7 +28,7 @@ const CharactersList = () => {
 		navigate(`${ROUTES.CHARACTERS}/${e.currentTarget.id}`);
 	};
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading || isFetching) return <LoadingSpinner />;
 
 	if (error) return <div>Something went wrong</div>;
 	return (
