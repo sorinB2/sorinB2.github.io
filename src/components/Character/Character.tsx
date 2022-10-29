@@ -1,4 +1,4 @@
-import { STRINGS } from '../../constants/strings';
+// Components
 import {
 	CharacterCard,
 	CharacterDetails,
@@ -7,7 +7,10 @@ import {
 	CharacterName,
 	CharacterStatus,
 	CharacterText
-} from './CharacterStyledComponents';
+} from './StyledComponents';
+
+// Other resources
+import { STRINGS } from '../../constants/strings';
 
 const Character = (props: CharacterProps) => {
 	const { name, image, status, species, origin } = props;

@@ -1,6 +1,10 @@
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
+
+// Components
 import App from './App';
+
+// Other resources
 import './index.css';
 
 const queryClient = new QueryClient();

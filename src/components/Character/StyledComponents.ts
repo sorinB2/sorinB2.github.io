@@ -15,7 +15,6 @@ export const CharacterCard = styled.div`
 	grid-gap: 15px;
 	overflow: hidden;
 	color: #212529;
-	margin: 16px;
 `;
 
 export const CharacterImage = styled.img`
