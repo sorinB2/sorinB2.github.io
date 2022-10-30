@@ -7,3 +7,8 @@ export const StyledList = styled.div`
 	margin: 16px 16px 0;
 	justify-content: center;
 `;
+
+export const ListWrapper = styled.div`
+	min-height: calc(100vh - 142px);
+	display: grid;
+`;
