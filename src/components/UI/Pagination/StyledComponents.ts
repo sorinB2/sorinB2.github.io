@@ -17,6 +17,7 @@ export const PageButton = styled.button`
 	height: 30px;
 	width: 30px;
 	display: flex;
+	color: ${COLORS.DARK_GRAY};
 	justify-content: center;
 	align-items: center;
 	border: 1px solid ${COLORS.GRAY};

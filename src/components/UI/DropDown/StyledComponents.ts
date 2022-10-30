@@ -1,12 +1,17 @@
 import styled from 'styled-components';
+import { COLORS } from '../../../constants/colors';
 
 export const StyledSelect = styled.select`
-	background-color: white;
-	border: thin solid gray;
+	background-color: ${COLORS.WHITE};
+	border: thin solid ${COLORS.GRAY};
 	border-radius: 4px;
+	color: ${COLORS.DARK_GRAY};
+	display: inline-block;
+	font: inherit;
 	line-height: 1.5em;
 	padding: 0.5em 3.5em 0.5em 1em;
 	margin: 0 8px;
+	outline: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
