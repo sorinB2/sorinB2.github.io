@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import EpisodesList from '../components/EpisodesList/EpisodesList';
 import CharacterCard from '../components/CharacterDetails/CharacterCard';
 import { BackButton, StyledCharacterDetails } from '../components/CharacterDetails/StyledComponents';
+import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 
 // Actions
 import { useGQLQuery } from '../hooks/useGQLQuery';
@@ -14,7 +15,6 @@ import { api } from '../api/api';
 import { GET_CHARACTER_DETAILS } from '../query/query';
 import { STRINGS } from '../constants/strings';
 import { ROUTES } from '../constants/routes';
-import LoadingSpinner from '../components/Loader/LoadingSpinner';
 
 const CharacterDetails = () => {
 	const params = useParams();

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Components
 import Character from '../components/Character/Character';
 import { StyledList } from '../components/CharactersList/StyledComponents';
+import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
+import DropDown from '../components/UI/DropDown/DropDown';
 
 // Actions
 import { useGQLQuery } from '../hooks/useGQLQuery';
@@ -11,18 +14,28 @@ import { useGQLQuery } from '../hooks/useGQLQuery';
 import { api } from '../api/api';
 import { GET_CHARACTERS } from '../query/query';
 import { CharacterType } from '../types/types';
-import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
-import LoadingSpinner from '../components/Loader/LoadingSpinner';
+import { GENDER_FILTERS, SPECIES_FILTERS, STATUS_FILTERS } from '../constants/filters';
 
 const CharactersList = () => {
 	const navigate = useNavigate();
-	const { data, isLoading, isFetching, error } = useGQLQuery({
+	const [statusFilter, setStatusFilter] = useState<string>('');
+	const [genderFilter, setGenderFilter] = useState<string>('');
+	const [speciesFilter, setSpeciesFilter] = useState<string>('');
+
+	const { data, isLoading, isFetching, error, refetch } = useGQLQuery({
 		api: api,
 		key: 'characters',
 		query: GET_CHARACTERS,
-		variables: { page: 2, filter: { name: '', status: '', species: '', gender: '' } }
+		variables: {
+			page: 1,
+			filter: { name: '', status: statusFilter, species: speciesFilter, gender: genderFilter }
+		}
 	});
+
+	useEffect(() => {
+		refetch();
+	}, [statusFilter, genderFilter, speciesFilter, refetch]);
 
 	const characterClichHandler = (e: React.MouseEvent) => {
 		navigate(`${ROUTES.CHARACTERS}/${e.currentTarget.id}`);
@@ -32,11 +45,18 @@ const CharactersList = () => {
 
 	if (error) return <div>Something went wrong</div>;
 	return (
-		<StyledList>
-			{data.characters.results.map((character: CharacterType) => {
-				return <Character key={character.id} {...character} onClick={characterClichHandler} />;
-			})}
-		</StyledList>
+		<>
+			<div>
+				<DropDown name="Status" options={STATUS_FILTERS} value={statusFilter} onChange={setStatusFilter} />
+				<DropDown name="Gender" options={GENDER_FILTERS} value={genderFilter} onChange={setGenderFilter} />
+				<DropDown name="Species" options={SPECIES_FILTERS} value={speciesFilter} onChange={setSpeciesFilter} />
+			</div>
+			<StyledList>
+				{data.characters.results.map((character: CharacterType) => {
+					return <Character key={character.id} {...character} onClick={characterClichHandler} />;
+				})}
+			</StyledList>
+		</>
 	);
 };
 
