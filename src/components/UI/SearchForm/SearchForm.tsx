@@ -11,7 +11,7 @@ const SearchForm = (props: SearchFormProps) => {
 	const [value, setValue] = useState<string>('');
 
 	useEffect(() => {
-		if (filterValue !== '') setValue(filterValue);
+		setValue(filterValue);
 	}, [filterValue]);
 
 	const submitHandler = (e: React.FormEvent) => {

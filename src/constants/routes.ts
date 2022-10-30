@@ -1,5 +1,6 @@
 export const ROUTES = {
 	HOME: '/',
 	CHARACTERS: '/characters',
-	CHARACTER_DETAILS: '/characters/:characterId'
+	CHARACTER_DETAILS: '/characters/:characterId',
+	OTHERS: '*'
 };

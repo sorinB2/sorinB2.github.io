@@ -70,8 +70,6 @@ const CharactersList = () => {
 		setPage(1);
 	};
 
-	if (isLoading || isFetching) return <LoadingSpinner />;
-
 	if (error) return <div>Something went wrong</div>;
 	return (
 		<ListWrapper>
@@ -86,12 +84,18 @@ const CharactersList = () => {
 				speciesHandler={speciesChangeHandler}
 				clearHandler={clearFiltersHandler}
 			/>
-			<StyledList>
-				{data.characters.results.map((character: CharacterType) => {
-					return <Character key={character.id} {...character} onClick={characterClickHandler} />;
-				})}
-			</StyledList>
-			<Pagination currentPage={page} info={data.characters.info} onClick={setPage} />
+			{isLoading || isFetching ? (
+				<LoadingSpinner />
+			) : (
+				<>
+					<StyledList>
+						{data.characters.results.map((character: CharacterType) => {
+							return <Character key={character.id} {...character} onClick={characterClickHandler} />;
+						})}
+					</StyledList>
+					<Pagination currentPage={page} info={data.characters.info} onClick={setPage} />
+				</>
+			)}
 		</ListWrapper>
 	);
 };

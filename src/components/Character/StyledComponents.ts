@@ -20,7 +20,7 @@ export const CharacterCard = styled.div`
 	grid-template-columns: 200px auto;
 	grid-gap: 15px;
 	overflow: hidden;
-	color: ${COLORS.DARG_GRAY};
+	color: ${COLORS.DARK_GRAY};
 	cursor: pointer;
 	&:hover {
 		transform: scale(1.01);

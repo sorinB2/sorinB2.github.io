@@ -6,7 +6,7 @@ const EpisodeListItem = (props: EpisodesListItemProps) => {
 	const { episode } = props;
 	return (
 		<StyledListItem
-			textColor={episode.id === 'Header' ? COLORS.BLACK : COLORS.DARG_GRAY}
+			textColor={episode.id === 'Header' ? COLORS.BLACK : COLORS.DARK_GRAY}
 			fontWeight={episode.id === 'Header' ? '600' : '400'}
 		>
 			<div>{episode.name}</div>

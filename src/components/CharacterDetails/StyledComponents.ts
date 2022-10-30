@@ -12,7 +12,7 @@ export const StyledCard = styled.div`
 	overflow: hidden;
 	position: sticky;
 	top: 20px;
-	color: ${COLORS.DARG_GRAY};
+	color: ${COLORS.DARK_GRAY};
 `;
 
 export const StyledCharacterDetails = styled.div`
