@@ -10,6 +10,12 @@ export const StyledInput = styled.input`
 	box-sizing: border-box;
 	border: 1px solid ${COLORS.GRAY};
 	border-radius: 5px;
+	@media (max-width: 530px) {
+		width: 300px;
+	}
+	@media (max-width: 430px) {
+		width: 250px;
+	}
 `;
 
 export const StyledButton = styled.button`
@@ -27,5 +33,9 @@ export const StyledButton = styled.button`
 	cursor: pointer;
 	&:hover {
 		transform: scale(1.01);
+	}
+	@media (max-width: 430px) {
+		width: 75px;
+		margin-left: 4px;
 	}
 `;

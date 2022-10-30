@@ -6,6 +6,13 @@ export const FiltersWrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 12px;
+	@media (max-width: 530px) {
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
 `;
 
 export const ClearFiltersButton = styled.button`

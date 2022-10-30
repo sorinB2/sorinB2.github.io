@@ -25,6 +25,14 @@ export const CharacterCard = styled.div`
 	&:hover {
 		transform: scale(1.01);
 	}
+	@media (max-width: 610px) {
+		width: 300px;
+		height: auto;
+		grid-template-columns: 1fr;
+		div {
+			margin: 0 12px 12px;
+		}
+	}
 `;
 
 export const CharacterImage = styled.img`
@@ -32,6 +40,10 @@ export const CharacterImage = styled.img`
 	width: ${(props: CharacterImageProps) => props.width};
 	object-fit: cover;
 	overflow: hidden;
+	@media (max-width: 610px) {
+		width: 300px;
+		height: 300px;
+	}
 `;
 
 export const CharacterName = styled.div`
