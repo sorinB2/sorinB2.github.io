@@ -4,7 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 // Components
 import EpisodesList from '../components/EpisodesList/EpisodesList';
 import CharacterCard from '../components/CharacterDetails/CharacterCard';
-import { BackButton, StyledCharacterDetails } from '../components/CharacterDetails/StyledComponents';
+import {
+	BackButton,
+	CharacterCardWrapper,
+	StyledCharacterDetails
+} from '../components/CharacterDetails/StyledComponents';
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 
@@ -37,10 +41,10 @@ const CharacterDetails = () => {
 
 	return (
 		<StyledCharacterDetails>
-			<div>
+			<CharacterCardWrapper>
 				<BackButton onClick={goBackHandler}>{STRINGS.GO_BACK}</BackButton>
 				<CharacterCard {...data.character} />
-			</div>
+			</CharacterCardWrapper>
 			<EpisodesList episodes={data.character.episode} />
 		</StyledCharacterDetails>
 	);

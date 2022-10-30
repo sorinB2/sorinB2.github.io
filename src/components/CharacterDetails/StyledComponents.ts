@@ -13,6 +13,20 @@ export const StyledCard = styled.div`
 	position: sticky;
 	top: 20px;
 	color: ${COLORS.DARK_GRAY};
+	@media (max-width: 700px) {
+		display: grid;
+		grid-template-columns: 250px auto;
+		height: 250px;
+		width: auto;
+		padding-bottom: 0;
+	}
+	@media (max-width: 610px) {
+		grid-template-columns: 1fr;
+		width: 300px;
+		height: auto;
+		padding-bottom: 20px;
+		justify-self: center;
+	}
 `;
 
 export const StyledCharacterDetails = styled.div`
@@ -20,6 +34,16 @@ export const StyledCharacterDetails = styled.div`
 	grid-template-columns: 250px auto;
 	grid-gap: 25px;
 	margin: 0 16px;
+	@media (max-width: 700px) {
+		grid-template-columns: 1fr;
+	}
+`;
+
+export const CharacterCardWrapper = styled.div`
+	@media (max-width: 610px) {
+		display: grid;
+		justify-content: center;
+	}
 `;
 
 export const DetailsWrapper = styled.div`

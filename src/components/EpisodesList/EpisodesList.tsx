@@ -9,9 +9,12 @@ const EpisodesList = (props: EpisodesListProps) => {
 	return (
 		<div>
 			<StyledTitle>Participate in {episodes.length} episodes</StyledTitle>
-			<EpisodeListItem episode={{ name: 'Name', air_date: 'Date', episode: 'Episode', id: 'Header' }} />
+			<EpisodeListItem
+				show={false}
+				episode={{ name: 'Name', air_date: 'Date', episode: 'Episode', id: 'Header' }}
+			/>
 			{episodes.map(episode => {
-				return <EpisodeListItem key={episode.id} episode={episode} />;
+				return <EpisodeListItem show={true} key={episode.id} episode={episode} />;
 			})}
 		</div>
 	);

@@ -3,9 +3,10 @@ import { COLORS } from '../../constants/colors';
 import { StyledListItem } from './StyledComponents';
 
 const EpisodeListItem = (props: EpisodesListItemProps) => {
-	const { episode } = props;
+	const { episode, show } = props;
 	return (
 		<StyledListItem
+			show={show}
 			textColor={episode.id === 'Header' ? COLORS.BLACK : COLORS.DARK_GRAY}
 			fontWeight={episode.id === 'Header' ? '600' : '400'}
 		>
@@ -25,4 +26,5 @@ interface EpisodesListItemProps {
 		episode: string;
 		id: string;
 	};
+	show: boolean;
 }
