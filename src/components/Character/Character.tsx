@@ -16,7 +16,7 @@ import { STRINGS } from '../../constants/strings';
 import { COLORS } from '../../constants/colors';
 
 const Character = (props: CharacterProps) => {
-	const { name, image, status, species, origin, id, onClick } = props;
+	const { name, image, status, species, gender, origin, id, onClick } = props;
 	return (
 		<CharacterCard id={id} onClick={onClick}>
 			<CharacterImage src={image} height="200px" width="200px" />
@@ -26,7 +26,7 @@ const Character = (props: CharacterProps) => {
 					<CharacterStatus
 						bg={status === 'Alive' ? COLORS.GREEN : status === 'Dead' ? COLORS.RED : COLORS.GRAY}
 					/>
-					<CharacterText>{`${status} - ${species}`}</CharacterText>
+					<CharacterText>{`${status} - ${species} - ${gender}`}</CharacterText>
 				</CharacterInformation>
 				<CharacterDetails>
 					<span>{STRINGS.ORIGIN}</span>
@@ -44,6 +44,7 @@ interface CharacterProps {
 	image: string;
 	status: string;
 	species: string;
+	gender: string;
 	id: string;
 	origin: {
 		name: string;

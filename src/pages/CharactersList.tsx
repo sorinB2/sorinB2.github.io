@@ -21,7 +21,7 @@ const CharactersList = () => {
 		api: api,
 		key: 'characters',
 		query: GET_CHARACTERS,
-		variables: { page: 1 }
+		variables: { page: 2, filter: { name: '', status: '', species: '', gender: '' } }
 	});
 
 	const characterClichHandler = (e: React.MouseEvent) => {

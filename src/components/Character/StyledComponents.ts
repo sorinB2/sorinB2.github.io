@@ -35,7 +35,7 @@ export const CharacterImage = styled.img`
 `;
 
 export const CharacterName = styled.div`
-	font-size: 26px;
+	font-size: 24px;
 	font-weight: 700;
 	margin-top: 16px;
 `;

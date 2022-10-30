@@ -1,13 +1,20 @@
 import gql from 'graphql-tag';
 
 export const GET_CHARACTERS = gql`
-	query ($page: Int) {
-		characters(page: $page) {
+	query ($filter: FilterCharacter, $page: Int) {
+		characters(filter: $filter, page: $page) {
+			info {
+				count
+				pages
+				next
+				prev
+			}
 			results {
 				id
 				name
 				status
 				species
+				gender
 				image
 				origin {
 					name
