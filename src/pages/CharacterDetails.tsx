@@ -6,6 +6,7 @@ import EpisodesList from '../components/EpisodesList/EpisodesList';
 import CharacterCard from '../components/CharacterDetails/CharacterCard';
 import { BackButton, StyledCharacterDetails } from '../components/CharacterDetails/StyledComponents';
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 // Actions
 import { useGQLQuery } from '../hooks/useGQLQuery';
@@ -28,7 +29,7 @@ const CharacterDetails = () => {
 
 	if (isLoading || isFetching) return <LoadingSpinner />;
 
-	if (error) return <div>Something went wrong</div>;
+	if (error) return <ErrorPage />;
 
 	const goBackHandler = () => {
 		navigate(ROUTES.CHARACTERS);

@@ -7,6 +7,7 @@ import { ListWrapper, StyledList } from '../components/CharactersList/StyledComp
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 import Pagination from '../components/UI/Pagination/Pagination';
 import CharacterFilters from '../components/CharacterFilters/CharacterFilters';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 // Actions
 import { useGQLQuery } from '../hooks/useGQLQuery';
@@ -70,7 +71,7 @@ const CharactersList = () => {
 		setPage(1);
 	};
 
-	if (error) return <div>Something went wrong</div>;
+	if (error) return <ErrorPage />;
 	return (
 		<ListWrapper>
 			<CharacterFilters
