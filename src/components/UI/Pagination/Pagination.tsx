@@ -25,7 +25,7 @@ const Pagination = (props: PaginationProps) => {
 	);
 };
 
-export default Pagination;
+export default React.memo(Pagination);
 
 interface PaginationProps {
 	currentPage: number | null;

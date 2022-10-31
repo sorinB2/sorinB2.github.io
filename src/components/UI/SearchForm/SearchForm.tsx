@@ -33,7 +33,7 @@ const SearchForm = (props: SearchFormProps) => {
 	);
 };
 
-export default SearchForm;
+export default React.memo(SearchForm);
 
 interface SearchFormProps {
 	onChange: (e: string) => void;

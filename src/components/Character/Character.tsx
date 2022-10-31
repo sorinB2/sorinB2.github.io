@@ -37,7 +37,7 @@ const Character = (props: CharacterProps) => {
 	);
 };
 
-export default Character;
+export default React.memo(Character);
 
 interface CharacterProps {
 	name: string;

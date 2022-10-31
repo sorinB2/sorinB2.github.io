@@ -21,7 +21,7 @@ const DropDown = (props: DropDownProps) => {
 	);
 };
 
-export default DropDown;
+export default React.memo(DropDown);
 
 interface DropDownProps {
 	name: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
@@ -40,36 +40,39 @@ const CharactersList = () => {
 		refetch();
 	}, [statusFilter, genderFilter, speciesFilter, refetch, nameFilter, page]);
 
-	const characterClickHandler = (e: React.MouseEvent) => {
-		navigate(`${ROUTES.CHARACTERS}/${e.currentTarget.id}`);
-	};
+	const characterClickHandler = useCallback(
+		(e: React.MouseEvent) => {
+			navigate(`${ROUTES.CHARACTERS}/${e.currentTarget.id}`);
+		},
+		[navigate]
+	);
 
-	const clearFiltersHandler = () => {
+	const clearFiltersHandler = useCallback(() => {
 		setStatusFilter('');
 		setGenderFilter('');
 		setSpeciesFilter('');
 		setNameFilter('');
-	};
+	}, []);
 
-	const nameChangeHandler = (e: string) => {
+	const nameChangeHandler = useCallback((e: string) => {
 		setNameFilter(e);
 		setPage(1);
-	};
+	}, []);
 
-	const statusChangeHandler = (e: string) => {
+	const statusChangeHandler = useCallback((e: string) => {
 		setStatusFilter(e);
 		setPage(1);
-	};
+	}, []);
 
-	const genderChangeHandler = (e: string) => {
+	const genderChangeHandler = useCallback((e: string) => {
 		setGenderFilter(e);
 		setPage(1);
-	};
+	}, []);
 
-	const speciesChangeHandler = (e: string) => {
+	const speciesChangeHandler = useCallback((e: string) => {
 		setSpeciesFilter(e);
 		setPage(1);
-	};
+	}, []);
 
 	if (error) return <ErrorPage />;
 	return (

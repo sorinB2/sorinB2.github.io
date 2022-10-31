@@ -25,7 +25,7 @@ const CharacterFilters = (props: CharacterFilterProps) => {
 	);
 };
 
-export default CharacterFilters;
+export default React.memo(CharacterFilters);
 
 interface CharacterFilterProps {
 	name: string;
