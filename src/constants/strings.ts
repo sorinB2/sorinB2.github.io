@@ -8,5 +8,6 @@ export const STRINGS = {
 	PAGE_UNAVAILABLE: "That page doesn't exist or is unavailable",
 	GO_BACK_HOME: 'Go Back To Home',
 	SOMETHING_WENT_WRONG: 'Something went wrong.',
-	ERROR_TEXT: 'Sorry, something went wrong there. Regresh the page or try again later.'
+	ERROR_TEXT: 'Sorry, something went wrong there. Regresh the page or try again later.',
+	CHARACTERS_NOT_FOUND: 'Characters not found'
 };

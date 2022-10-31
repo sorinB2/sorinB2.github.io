@@ -17,6 +17,7 @@ import { api } from '../api/api';
 import { GET_CHARACTERS } from '../query/query';
 import { CharacterType } from '../types/types';
 import { ROUTES } from '../constants/routes';
+import { STRINGS } from '../constants/strings';
 
 const CharactersList = () => {
 	const navigate = useNavigate();
@@ -93,6 +94,7 @@ const CharactersList = () => {
 			) : (
 				<>
 					<StyledList>
+						{data.characters.results.length === 0 && <h2>{STRINGS.CHARACTERS_NOT_FOUND}</h2>}
 						{data.characters.results.map((character: CharacterType) => {
 							return <Character key={character.id} {...character} onClick={characterClickHandler} />;
 						})}
