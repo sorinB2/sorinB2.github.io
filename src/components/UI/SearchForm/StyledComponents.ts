@@ -32,6 +32,11 @@ export const StyledButton = styled.button`
 	font-weight: 500;
 	margin-left: 10px;
 	cursor: pointer;
+	span {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	&:hover {
 		transform: scale(1.01);
 	}

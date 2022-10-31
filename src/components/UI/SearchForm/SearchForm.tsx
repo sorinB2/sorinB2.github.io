@@ -26,7 +26,9 @@ const SearchForm = (props: SearchFormProps) => {
 				onChange={e => setValue(e.target.value)}
 				type="text"
 			/>
-			<StyledButton type="submit">{STRINGS.SEARCH}</StyledButton>
+			<StyledButton type="submit">
+				<span>{STRINGS.SEARCH}</span>
+			</StyledButton>
 		</form>
 	);
 };
