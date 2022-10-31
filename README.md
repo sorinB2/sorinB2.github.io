@@ -1,6 +1,6 @@
 # Rick and Morty API Project
 
-[Demo](https://sorinb2.github.io)
+[Live Demo](https://sorinb2.github.io)
 
 ## Dependencies:
 
