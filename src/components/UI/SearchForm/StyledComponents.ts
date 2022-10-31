@@ -24,6 +24,7 @@ export const StyledButton = styled.button`
 	background-color: ${COLORS.DARK_BLUE};
 	outline: none;
 	border: 1px solid ${COLORS.DARK_BLUE};
+	text-align: center;
 	border-radius: 5px;
 	box-sizing: border-box;
 	color: ${COLORS.WHITE};
