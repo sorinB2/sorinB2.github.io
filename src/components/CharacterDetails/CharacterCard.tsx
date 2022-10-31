@@ -17,7 +17,7 @@ const CharacterCard = (props: CharacterCardProps) => {
 	const { name, image, status, species, gender, origin, location } = props;
 	return (
 		<StyledCard>
-			<CharacterImage src={image} height="250px" width="250px" />
+			<CharacterImage src={image} alt={`${name} image`} height="250px" width="250px" />
 			<DetailsWrapper>
 				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>

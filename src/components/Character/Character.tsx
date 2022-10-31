@@ -19,7 +19,7 @@ const Character = (props: CharacterProps) => {
 	const { name, image, status, species, gender, origin, id, onClick } = props;
 	return (
 		<CharacterCard id={id} onClick={onClick}>
-			<CharacterImage src={image} height="200px" width="200px" />
+			<CharacterImage src={image} alt={`${name} image`} loading="lazy" height="200px" width="200px" />
 			<div>
 				<CharacterName>{name}</CharacterName>
 				<CharacterInformation>
