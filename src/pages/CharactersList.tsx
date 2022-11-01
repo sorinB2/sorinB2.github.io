@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Components
 import Character from '../components/Character/Character';
-import { ListWrapper, StyledList } from '../components/CharactersList/StyledComponents';
+import { ListWrapper, SortingWrapper, StyledList } from '../components/CharactersList/StyledComponents';
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 import Pagination from '../components/UI/Pagination/Pagination';
 import CharacterFilters from '../components/CharacterFilters/CharacterFilters';
@@ -60,11 +60,8 @@ const CharactersList = () => {
 	});
 
 	useEffect(() => {
-		if (data) {
-			const arr = Array.from({ length: data.characters.info.count }, (_, i) => i + 1);
-			setIdsArray(arr);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		const arr = Array.from({ length: 826 }, (_, i) => i + 1);
+		setIdsArray(arr);
 	}, []);
 
 	useEffect(() => {
@@ -167,7 +164,14 @@ const CharactersList = () => {
 					speciesHandler={speciesChangeHandler}
 					clearHandler={clearFiltersHandler}
 				/>
-				<DropDown name="Sort" options={SORTING_OPTIONS} value={sortingOption} onChange={changeSortingHandler} />
+				<SortingWrapper>
+					<DropDown
+						name="Sort"
+						options={SORTING_OPTIONS}
+						value={sortingOption}
+						onChange={changeSortingHandler}
+					/>
+				</SortingWrapper>
 			</div>
 			{isLoading || isFetching || allLoading ? (
 				<LoadingSpinner />
