@@ -8,7 +8,7 @@ const Pagination = (props: PaginationProps) => {
 	const { pages, prev, next } = info;
 	return (
 		<PaginationWrapper>
-			<PageButton disabled={prev === null} onClick={() => onClick(prev)}>
+			<PageButton disabled={prev === null} onClick={() => onClick(prev as number)}>
 				{'<'}
 			</PageButton>
 			{prev && <PageButton onClick={() => onClick(1)}>1</PageButton>}
@@ -17,8 +17,8 @@ const Pagination = (props: PaginationProps) => {
 			<PageButton currentPage>{currentPage}</PageButton>
 			{next && <PageButton onClick={() => onClick(next)}>{next}</PageButton>}
 			{next && next !== pages && <StyledDots>...</StyledDots>}
-			{next && next !== pages && <PageButton onClick={() => onClick(pages)}>{pages}</PageButton>}
-			<PageButton disabled={next === null} onClick={() => onClick(next)}>
+			{next && next !== pages && <PageButton onClick={() => onClick(pages as number)}>{pages}</PageButton>}
+			<PageButton disabled={next === null} onClick={() => onClick(next as number)}>
 				{'>'}
 			</PageButton>
 		</PaginationWrapper>
@@ -35,5 +35,5 @@ interface PaginationProps {
 		prev: number | null;
 		next: number | null;
 	};
-	onClick: (e: number | null) => void;
+	onClick: (e: number) => void;
 }
