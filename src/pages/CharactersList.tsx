@@ -89,7 +89,7 @@ const CharactersList = () => {
 
 	useEffect(() => {
 		setSortedCharactersByPage(sortedCharacters.slice((page - 1) * 20, page * 20));
-	}, [page, sortedCharacters]);
+	}, [page, sortedCharacters, sortingOption]);
 
 	useEffect(() => {
 		if (isSorting) {
